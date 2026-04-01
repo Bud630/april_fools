@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Overlay that triggers autoplay with sound -->
+  <div id="overlay" onclick="startVideo()">
+    <div class="overlay-content">
+      <h2>You've been invited!</h2>
+      <p>Click anywhere to continue</p>
+    </div>
+  </div>
+
   <header>
     <h1>Watch This</h1>
   </header>
@@ -15,8 +23,9 @@
     <div class="video-container">
       <div class="video-wrapper">
         <iframe
-          src="https://www.youtube.com/embed/EE-xtCF3T94"
+          id="video"
           title="YouTube video player"
+          frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         ></iframe>
@@ -27,5 +36,12 @@
   <footer>
     &copy; 2026 Watch This
   </footer>
+
+  <script>
+    function startVideo() {
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById('video').src = 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1';
+    }
+  </script>
 </body>
 </html>
